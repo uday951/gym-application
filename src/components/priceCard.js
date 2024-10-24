@@ -1,10 +1,15 @@
 import React from "react";
 import Image from "next/image";
+
 export function PriceCard({ title, price, features, thumbnail, tier }) {
+  const handlePurchase = () => {
+    window.location.href = "https://rzp.io/rzp/89ujYYNv";
+  };
+
   return (
     <div
       id="price-card-1"
-      className="h-[600px] w-[400px]  bg-white border flex-col"
+      className="h-[600px] w-[400px] bg-white border flex-col"
     >
       <div
         id="price-card-1-head"
@@ -61,6 +66,7 @@ export function PriceCard({ title, price, features, thumbnail, tier }) {
       <div className="price-card-1-footer h-[150px] flex justify-center items-center">
         <button
           id={"price-btn-" + tier}
+          onClick={handlePurchase} // Redirect to Razorpay URL
           className="bg-white mt-4 py-4 px-6 text-sm uppercase font-bold border border-red-500 transition-all duration-300 hover:py-6 hover:px-10 hover:bg-red-500 hover:text-white"
         >
           Purchase Now
